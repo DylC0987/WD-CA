@@ -1,0 +1,220 @@
+/* General Styles */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Segoe UI';  
+  font-size: 20px;
+  color: white;
+  
+}
+
+body {
+    background-color: rgb(141, 0, 148);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* nav */
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: rgb(59, 59, 59);
+    margin: 0;
+    border-bottom: .2em solid rgb(38, 38, 38);
+    
+    
+  }
+  
+  header nav ul li {
+    margin-right: 3em;
+  }
+  
+  
+  nav a {
+    color: #ffe100;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  nav li i {
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color:  rgb(255, 255, 255);
+  }
+h1 {
+    font-size: 2.5rem;
+    margin: 30px 0;
+    text-align: center;
+}
+
+
+/* Game Container */
+
+.game_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  margin-left: 22em;
+}
+
+/* Game Info */
+.game_info {
+    font-size: 1.5em;
+    font-weight: bold;
+    
+    margin-left: 1em;
+    width: 15em; /* Set a fixed width */
+}
+
+.game_container canvas {
+  margin-top: 1em;
+}
+
+/* Leaderboard */
+#Leaderboard p {
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+table {
+    border: 0.3em solid rgb(0, 0, 0);
+    background-color: rgb(255, 221, 0);
+    width: 40em;
+    text-align: left;
+    border-collapse: collapse;
+    margin: auto;
+  }
+  
+  table td {
+    padding: .5em 1em;
+    border: .1em solid black;
+  }
+  
+  table td {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  /* table tr:nth-child(even) {
+    background: white;
+  } */
+  
+  table tr:first-child {
+    background-color: white;
+  }
+
+  table th {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    padding: .5em;
+    border-bottom: .3em solid #000000;
+  
+  }
+  
+
+/* Forms */
+form {
+    width: 30em;
+    margin:  auto;
+    padding: 1em;
+    background-color: rgb(255, 221, 0);
+    color: rgb(0, 0, 0);
+    border: .5em solid black;
+    
+}
+
+form label {
+    display: block;
+    font-size: 1.1rem;
+    margin: 0 0 1em;
+}
+
+form input {
+    width: 100%;
+    padding: .5em;
+    font-size: 1.1rem;
+    margin: 0 0 1em;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: auto;
+    cursor: pointer;
+    background-color: #1ea809;
+    color: #fff;
+    border: .1em solid black;
+    padding: 1em 2em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #00b633;
+}
+
+/* How to Play/ Index */
+#How_to_Play {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+   
+    margin:  auto;
+    font-size: 1.2em;
+    line-height: 1.5;
+    border:  .5em solid rgb(5, 5, 5);
+
+
+  }
+  
+  
+  #How_to_Play ul {
+    /* list-style-position: inside; */
+    text-align: left;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    /* border:  2em solid rgb(255, 255, 255); */
+    margin-left: 14.3em;
+    padding-right: 10em;
+    
+  }
+  
+  #How_to_Play li {
+    margin-bottom: 1em;
+  }
+  
+  #How_to_Play a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  #How_to_Play a:hover {
+    text-decoration: underline;
+  }
+  
+  #How_to_Play h2, h1 {
+    color: #ffe100;
+  }
+  #How_to_Play img {
+    
+    width: 5em;
+   
+    margin: auto;
+  }
+
+  
+

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main id="How_to_Play">
+
+
+<h1> How To play</h1>
+<img src="{{ url_for('static', filename='DGlogo.png') }}" alt="Logo" />
+
+
+<ul>
+	<li>Use the arrow keys to move your soldier and avoid the ghosts.</li>
+	<li>Move your player to start the game</li>
+	<li>Collect discoballs to activate "Bullet Time" and gain plasma bullets for 10 seconds.</li>
+	<li>When Bullet Time is active, use w, a, s, d keys to aim your gun. (w = up) (s = down) (a = left) (d = right) and use spacebar to shoot.</li>
+	<li>Kill as many ghosts as you can to raise your score(Kill Count) </li>
+	<li>Game ends when the player is touched by a ghost.</li>
+	<li>For test purposes press "p" to make the player invincible to ghost collisions."p" pressed again will toggle off this cheat</li>
+</ul>
+
+<h2>Ghosts Info</h2>
+<ul>
+	<li>Ghosts can move through obstacles, but doing so slows them down.</li>
+	<li>When ghosts are white, they are at their slowest and least aggressive.</li>
+	<li>When you kill enough of their ghost friends they will turn orange and become more aggresive.</li>
+	<li>When they turn red, they are at their most aggressive state .</li>
+</ul>
+
+
+<h2>Accreditations</h2>
+<a href="http://www.freepik.com">Heaven image designed by Freepik</a>
+<p>Background Music © 2023 Dylan Creedon</p>
+</main>
+{% endblock %}

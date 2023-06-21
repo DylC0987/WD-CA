@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block main_content %} 
+
+<main id="Leaderboard">
+
+    <h1>Top 5 Leaderboard</h1>
+    {% if g.user %}
+        {% for detail in user %}
+            <p>Your top score: {{ detail["score"] }}</p>
+        {% endfor %}
+    {% endif %} 
+   
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>User ID</th>
+            <th>Score</th>
+        </tr>
+        
+        {% for scores in leaderboard %}               
+            <tr>
+                <td>{{ loop.index }}</td> 
+                <td>{{ scores["user_id"] }}</td>
+                <td>{{ scores["score"] }}</td>          
+            </tr>
+        {% endfor %}                            
+    </table> 
+</main>          
+
+{% endblock %}
+
+

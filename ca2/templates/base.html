@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>DiscoGhosts CA2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='discoghost.ico') }}"/>
+    <script src="{{ url_for('static', filename='discoghosts.js') }}" type="module"></script>
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+        {% if g.user %}
+            <li><i>id: {{ g.user }}</i></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('register') }}">Register</a></li> 
+            <li><a href="{{ url_for('login') }}">Login</a></li> 
+        {% endif %}       
+        <li><a href="{{ url_for('game') }}">Play</a></li>
+        <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+        <li><a href="{{ url_for('index') }}">How To Play</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    {% block main_content %}
+    {% endblock %}
+</body>
+
+</html>
