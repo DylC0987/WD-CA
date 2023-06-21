@@ -18,20 +18,7 @@ FEATURES:
 *Once following a user, recent ratings from those users will pop up on the index/Search page. (* A recent rating is a rating made within the last week)
 *Users can create bios on their own profile pages. They can delete ratings and reviews too on their profile or on album pages.
                                                  
-List of albums that can be searched on this demo site:
-('Thriller', 'Michael Jackson', 1982, 'Pop', 0,'Thriller_image.jpg' ),
-('Abbey Road', 'The Beatles', 1969, 'Rock', 0, 'Abbey_Road_image.jpg'),
-('Nevermind', 'Nirvana', 1991, 'Grunge',0,'Nevermind_image.jpg'),
-('Kind of Blue', 'Miles Davis', 1959, 'Jazz',0,'Kind_of_Blue_image.jpeg'),
-('Rumours', 'Fleetwood Mac', 1977, 'Rock', 0, 'Rumours_image.jpg'),
-('Franz Ferdinand', 'Franz Ferdinand', 2004, 'Indie Rock',0,'Franz_Ferdinand_image.jpg'),
-('Hot Fuss', 'The Killers', 2004, 'Indie Rock', 0,'Hot_Fuss_image.jpeg'),
-('American Idiot', 'Green Day', 2004, 'Pop Punk',0,'American_Idiot_image.jpeg'),
-('Demon Days', 'Gorillaz', 2005, 'Alternative',0,'Demon_Days_image.jpg'),
-('Currents', 'Tame Impala', 2015, 'Alternative',0,'Currents_image.jpg'),
-('More Life', 'Drake', 2017, 'Hip Hop', 0,'More_Life_image.jpg'),
-('Dawn FM', 'The Weeknd', 2022, 'Pop',0,'Dawn_FM_image.jpg'),
-('Gloria', 'Sam Smith', 2023, 'Pop',0,'Gloria_image.jpg');
+List of albums that can be searched on this demo site can be found using the information button at the far right of the navigation bar.
 
 Test account:
 UserID: Test
