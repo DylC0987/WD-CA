@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block main_content %}    
+<main id="followers">  
+  <img src="{{ url_for('static', filename='cartoon_vinyl_tran.png') }}" alt="Vinyl Image" />
+   <h1>User: <i>{{ user_id }}</i></h1>
+
+  <section class="followers_following">
+    <section class="followers">
+      <h2> Followers</h2>
+    
+      {% for info in follower_data %}
+        <ul>
+          <li><a href="{{ url_for('view_profile', user_id=info['follower_id']) }}"><i> {{ info['follower_id'] }} </i></a></li>
+        </ul>      
+      {% endfor %} 
+    </section>    
+      
+      <section class="following">
+      <h2> Following</h2>
+        
+        {% for info in following_data %}
+          <ul>
+            <li><a href="{{ url_for('view_profile', user_id=info['user_id']) }}"><i> {{ info['user_id'] }} </i></a></li>
+          </ul>       
+        {% endfor %} 
+      </section>    
+
+  </section>
+
+      <a class="back_button" href="{{ url_for('view_profile', user_id=user_id) }}"><i class="fa-solid fa-backward"></i></a>
+
+</main>  
+{% endblock %}

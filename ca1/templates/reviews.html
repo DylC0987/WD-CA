@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main_content %}    
+    
+<main id="reviews">
+    
+  <h1> Reviews</h1>
+ 
+
+  <form method="POST" action="" novalidate>
+		{{ form.hidden_tag() }}
+		{{ form.sort.label }} 
+    {{ form.sort() }}
+		{{ form.submit() }}
+	</form>
+
+  <section>
+    {% for info in reviews %}
+    <ul>
+      
+      <li><a href="{{ url_for('view_profile', user_id=info['user_id']) }}"><i>{{ info['user_id'] }}</i></a>  <b>{{ info["rating"] }}</b></li>
+      
+      <li>"{{ info["review"] }}"</li>
+      {% if info["user_id"] != g.user %} 
+        <!-- {# user_id != g.user will prevent logged in user from liking their own reviews #} -->
+        <li><a href="{{ url_for('like_review', review_id= info['review_id']) }}"><i class="fa-solid fa-thumbs-up"></i></a> {{ info["likes"] }}  <a href="{{ url_for('dislike_review', review_id= info['review_id']) }}"><i class="fa-solid fa-thumbs-down"></i></a> {{ info["dislikes"] }}</li>
+      {% else %} 
+      <li><i class="fa-solid fa-thumbs-up"></i> {{ info["likes"] }} <i class="fa-solid fa-thumbs-down"></i></a> {{ info["dislikes"] }}</li>
+      {% endif %}  
+       
+    </ul>    
+    {% endfor %} 
+</section>    
+
+  <a class="back_button" href="{{ url_for('rating', album_id=album_id) }}"><i class="fa-solid fa-backward"></i></a>
+  
+</main>
+
+{% endblock %}

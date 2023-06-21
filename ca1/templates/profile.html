@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+
+<main id="profile">
+
+  <img class="vinyl" src="{{ url_for('static', filename='cartoon_vinyl_tran.png') }}" alt="Vinyl Image" />
+
+  <section class="viewed_profile">
+    {% for info in user_profile %}
+    <h1> User: <i>{{ info["user_id"] }} </i> </h1>
+    <p> {{ info["bio"] }}</p>
+    <form method="POST" action="" novalidate>
+      {{ form.hidden_tag() }}
+      {{ form.bio.label }}
+      {{ form.bio() }}
+      {% for error in form.bio.errors %}
+      {{ error }}
+      {% endfor %}
+     
+      {{ form.submit() }}
+    </form>
+
+    <p> Followers: {{ info["followers_amount"] }} Following: {{ info["following_amount"] }}</p>
+    <a href="{{ url_for('view_followers', user_id=info['user_id']) }}">View Followers</a>
+
+    {% endfor %}
+
+  </section>
+
+
+  
+  <h2>Opinions</h2>
+  <section class="opinions">
+  {% for detail in album_ratings %}
+  
+    <ul>
+      <li><a href="{{ url_for('rating', album_id=detail['album_id']) }}"><img src="{{ url_for('static', filename=detail['image_url']) }}" alt="album cover"></a></li>
+      <li> <a href="{{ url_for('rating', album_id=detail['album_id']) }}"><i>{{ detail["album_name"] }}</i></a> <b>{{ detail["rating"] }}</b> <a href="{{ url_for('delete_rating', album_id=detail['album_id']) }}">(Delete)</a></li>
+      
+      {% if detail["review"] %}
+        <li> "{{ detail["review"] }}"</li>
+
+        {% if detail["likes"] %}
+
+        <li><i class="fa-solid fa-thumbs-up"></i>{{ detail["likes"] }} </li>
+        {% endif %}
+      
+      {% endif %}
+    </ul>
+  {% endfor %}  
+</section> 
+  
+
+
+</main>
+
+{% endblock %}

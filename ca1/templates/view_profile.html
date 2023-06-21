@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main id="view_profile">
+
+<img class="vinyl" src="{{ url_for('static', filename='cartoon_vinyl_tran.png') }}" alt="Vinyl Image" />
+
+<section class="viewed_profile">
+{% for data in profile %}
+    <h1>User ID: <i> {{ data["user_id"] }} </i></h1>
+    {% if data["bio"] %}
+        <p> Bio: {{ data["bio"] }} </p> 
+    {% endif %}
+    <ul>
+       
+        <li>Followers: {{ data["followers_amount"] }} Following: {{ data["following_amount"] }} <a href="{{ url_for('view_followers', user_id=data.user_id) }}">(View Followers)</a> </li>
+
+        {% if existing_follower %}
+            <li><a href="{{ url_for('follow', user_id=data.user_id) }}">Unfollow</a></li>
+        {% else %}
+            <li><a href="{{ url_for('follow', user_id=data.user_id) }}">Follow</a></li>
+        {% endif %}
+
+    </ul>
+{% endfor %}  
+</section>
+
+
+<h2>Opinions</h2>
+
+<section class="opinions">
+
+{% for album_rating in album_ratings %}
+    <ul>
+        <li><a href="{{ url_for('rating', album_id=album_rating['album_id']) }}"><img src="{{ url_for('static', filename=album_rating['image_url']) }}" alt="album cover"></a></li>
+        <li><a href="{{ url_for('rating', album_id=album_rating['album_id']) }}"><i> {{ album_rating["album_name"] }} </i></a> <b>{{ album_rating["rating"] }} </b></li>
+    {% if album_rating["review"] %}
+        <li>"{{ album_rating["review"] }}"</li>
+        <li><a href="{{ url_for('like_review', review_id= album_rating['review_id']) }}"><i class="fa-solid fa-thumbs-up"></i></a> {{ album_rating["likes"] }}  <a href="{{ url_for('dislike_review', review_id= album_rating['review_id']) }}"><i class="fa-solid fa-thumbs-down"></i></a> {{ album_rating["dislikes"] }}</li>
+    {% endif %}
+    </ul>
+{% endfor %}
+
+</section>
+
+</main>
+{% endblock %}

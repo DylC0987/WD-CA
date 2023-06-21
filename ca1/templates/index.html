@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main id="index">
+	
+	
+	 <h1>SHARE YOUR MUSIC TASTE WITH THE WORLD! 🌎</h1>
+
+	
+	<img src="{{ url_for('static', filename='Cassette1.png') }}" alt="Cassette Image" />
+	
+	
+
+	<form method="POST" action="" novalidate>
+		
+		{{ form.hidden_tag() }}
+		{{ form.filter_by.label }} 
+        {{ form.filter_by() }}
+		{{ form.search.label }} 
+        {{ form.search() }}
+		{% for error in form.search.errors %}
+            {{ error }}
+        {% endfor %}
+		
+		<br>
+		{{ form.submit() }}
+	</form>
+		<section>
+			{% if g.user %}
+			<h2>New from <b>Followed</b></h2>
+			
+				{% for news in follow_news %}
+			<ul>	
+				<li><a href="{{ url_for('view_profile', user_id=news['user_id'] ) }}"><i>{{ news["user_id"] }}</i> </a> rated  <a href="{{ url_for('rating', album_id=news['album_id']) }}"><i>{{ news["album_name"] }}</i></a> : {{ news["rating"] }}/5</li>
+				
+				
+			</ul>			
+				{% endfor %}
+			
+			{% endif %}
+		</section>
+		<script src="{{ url_for('static', filename='index.js') }}" type="module"></script>	
+	
+</main>	
+{% endblock %}

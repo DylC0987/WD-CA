@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<main id="login">
+
+<h1> Login </h1>
+
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+
+
+    <form method ="POST" action="" novalidate>
+        {{ form.hidden_tag() }}
+        {{ form.user_id.label }}
+        {{ form.user_id() }}
+        {% for error in form.user_id.errors %}
+            {{ error }}
+        {% endfor %}
+        <br />  
+        {{ form.password.label }}
+        {{ form.password() }}
+        {% for error in form.password.errors %}
+            {{ error }}
+        {% endfor %}
+        <br>
+        {{ form.submit() }}
+    </form>  
+
+</main>     
+{% endblock %}

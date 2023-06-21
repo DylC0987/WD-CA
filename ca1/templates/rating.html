@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+<main id="ratings">
+
+  <section class="album">
+
+ <img class="banner" src="{{ url_for('static', filename='Banner_Photo_Heard.png') }}" alt="Wall with cassettes">
+
+  
+  {% for detail in album %}
+
+ <img class="album_art" src="{{ url_for('static', filename=detail['image_url']) }}" alt="album cover" >
+
+  <section class="album_details">
+      <ul>
+     
+          <li><i>{{ detail["album_name"] }}</i> <b>{{ detail["avg_rating"]|round(1) }} {# rounds to one decimal place#} </b></li>
+          <li><i>{{ detail["artist"] }}</i></li>
+          <li>({{ detail["release_year"] }})</li>
+          <li>({{ detail["genre"] }})</li>
+          <li><a href="{{ url_for('view_reviews', album_id=detail['album_id']) }}">View Reviews</a></li>
+ 
+  
+      {% for info in user_check %}
+        {% if info["rating"] %}
+          <li>Your rating: <b>{{ info["rating"] }}</b> <a href="{{ url_for('delete_rating', album_id=detail['album_id']) }}">(delete)</a></li>
+        {% endif %}  
+        {% if info["review"] %}
+          <li>Your review: <span>"{{ info["review"] }}"</span></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  </section>     
+
+</section>
+
+<section class="rating_album">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.rating.label }}
+    {{ form.rating() }}
+    
+    {{ form.review.label }}
+    {{ form.review() }}
+    
+    {{ form.submit() }}
+
+  </form>
+
+  
+</section>  
+
+{% if viewed_user_id %}
+  <a class="back_button" href="{{ url_for('view_profile', user_id=viewed_user_id ) }}"><i class="fa-solid fa-backward"></i></a>
+  {% endif %}
+
+</main>
+{% endblock %}
+
+
+
+
+
+
+

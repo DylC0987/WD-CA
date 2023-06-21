@@ -1,0 +1,962 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+  font-family:  Arial, Helvetica, sans-serif;
+  color: white;
+
+}
+
+
+body {
+  background: linear-gradient(90deg, rgba(255,117,0,1) 0%, rgba(255,86,0,1) 50%, rgba(255,74,0,1) 78%);
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+  transition: .5s;
+}
+/*----------------------------------------------------------------Header/Nav--------------------------------------------------------------------------*/
+
+
+
+nav img{
+  width: 6em;
+  
+}
+
+nav figure {
+  
+  margin-top: 0.4em;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+
+  list-style: none;
+  padding-right: 1em;
+  
+}
+
+
+
+nav a {
+  color: black;
+  font-weight: bold;
+}
+/* ------------------------------------------------------Index+universal---------------------------------------------------------------------- */
+#index img{
+  width: 35em;
+}
+
+#index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+#filter_by {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+
+#filter_by li {
+  
+  font-size: 1em;
+}
+
+/* effects text on label */
+label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  /* font-weight: bold;
+   */
+}
+label[for="filter_by"] {
+  
+  display: none;
+  /* displays none for the Filter By text title */
+}
+
+label[for="search"]{
+  display: none;
+}
+
+/* search_bar */
+input[type="text"]{
+  /* display: block; */
+  width: 100%;
+  padding: .5em;
+  font-size: 18px;
+  border: 0em solid #979797;
+  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .5em;
+  border-bottom: .1em solid black;
+  
+}
+/* Style for form submit button */
+input[type="submit"] {
+  background-color: #F2BC00;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 2em;
+  
+  border-radius: .5em;
+}
+
+input[type="submit"]:hover {
+  background-color: #1290ff;
+  transition: 30ms;
+}
+
+/* radiofield list */
+ul#filter_by {
+  margin: 0;
+  border: 0 solid #000000;
+  border-radius: .5em;
+ 
+}
+
+/* Gets rid of radiofield button */
+#index input[type="radio"] {
+  display: none;
+  
+}
+
+#index form {
+  margin-top: 2em;
+  text-align: center;
+}
+
+#index form li {
+  background-color: #EFE2C5;
+  /* border: .1em solid black; */
+  padding-right: .5em;
+  padding-left: .5em;
+  flex-grow: 1; /*this will make my li fill out entire space of ul */
+  border-bottom: .1em solid black;
+  
+}
+
+/* Create lines/borders between radiofield choices on the right, but not the last one */
+#index form li:not(:last-of-type) {
+  border-right: .1em solid black;
+
+}
+
+/* curves the first and last li(radiofield choices) borders */
+#index form li:last-of-type {
+  border-top-right-radius: .5em;
+  
+
+}
+
+#index form li:first-child {
+  border-top-left-radius: .5em;
+  
+
+}
+
+#filter_by label:hover{
+  cursor: pointer;
+}
+
+/* ----New from followed---- */
+#index section b{
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#index section {
+  text-align: left;
+  
+}
+
+#index section h2 {
+  border-bottom: .1em solid #F2BC00;
+}
+
+#index section ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+#index section i {
+  color: black;
+  
+}
+
+#index section a:hover {
+  color: #1290ff;
+  
+}
+
+
+
+/*------------------------------------------------------------------- results ------------------------------------------------------------- */
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+/* Casette image where #result(main) is a parent */
+#results > img{
+  width: 30em;  
+}
+
+/* album covers */
+#results section img {
+  width: 10em;
+  border: .1em solid white ;
+  box-shadow: 1px 0px 10px 4px crimson;
+}
+
+#results section {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+#results ul {
+  list-style: none;
+  /* background-color: #000000; */
+  padding: 0;
+  flex-basis: auto;
+ 
+}
+
+#results ul .rating_list {
+  color: #fdfdfd;
+  transform: translate(150px, -80px );
+}
+
+#results .rating {
+  background-color: #1290ff;
+  border: .2em solid #1290ff ;
+}
+
+/* Artist name */
+#results ul li:nth-child(3) i {
+  font-size: .7em;
+  color: black;
+  
+}
+
+
+/* User_ID  */
+
+.user_search {
+  display: flex;
+
+}
+
+.user_search li:nth-child(2) {
+  margin-top: .5em;
+}
+#results .user_search a  {
+
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: bold;
+  
+}
+
+#results .user_search a:hover {
+  color: #000000;
+}
+
+#results section .user_search img {
+  border: 0;
+  width: 3em;
+}
+
+
+/* ------------------------------------------------------------------- Login  ----------------------------------------------------- */
+
+
+
+#login, #register  {
+  background-color: #ffffff;
+  width: 30em;
+  margin: auto;
+  margin-top: 5em;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.2);
+}
+
+#login h1, #register h1  {
+  color: #000000;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Style the login form */
+#login form, #register form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the form labels */
+#login form label, #register form label {
+  font-weight: bold;
+}
+
+/* Style the form inputs */
+#login form input, #register form input {
+  padding: .5rem;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black
+}
+
+/* Style the submit button */
+#login form input[type="submit"], #register form input[type="submit"] {
+  background-color: #1290ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login form input[type="submit"]:hover, #register form input[type="submit"]:hover {
+  background-color: #00aef8;
+}
+
+/* styles the error message sent from Form */
+*:invalid {
+  color: black; /* Set the text color to black */
+  /* Additional styling properties */
+}
+
+
+
+/* -----------------------------------------------------------------Rating-------------------------------------------------------------------------- */
+
+
+#ratings .album {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: .7fr 1fr .5fr
+  
+}
+
+ #ratings img.banner {
+  width: 100%;
+  filter: drop-shadow(0 0 0.75rem crimson);
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+} 
+
+
+#ratings  img.album_art {
+  width: 100%;
+  border: .1em solid white;
+  filter: drop-shadow(0 0 0.5rem crimson);
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#ratings  .album_details {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  
+}
+
+#ratings  .album_details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  font-weight: bold;
+
+}
+#ratings  .album_details li:first-child {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+#ratings  .album_details li:first-child b {
+  background-color: #1290ff;
+  border: 2px solid black;
+  padding-left: .2em;
+  padding-right: .2em;
+
+}
+
+#ratings  .album_details li:nth-child(4), .album_details li:last-child {
+  border-bottom: .1em solid black;
+}
+
+#ratings  .album_details li:nth-child(4) {
+  margin-bottom: 1em;
+}
+
+#ratings  .album_details li:nth-child(3), .album_details li:nth-child(4) {
+  color: #000000;
+  font-size: .8em;
+  
+}
+
+#ratings  .album_details li:nth-child(6), .album_details li:nth-child(7) {
+  color: black;
+  
+}
+
+#ratings a:hover {
+  color: black;
+  
+}
+
+#ratings a.back_button  {
+  background-color: rgba(0, 0, 255, 0);
+  font-size: 1.5em;
+}
+
+
+#ratings .album_details li:nth-child(6) b {
+  color: #ffffff;
+  background-color: #00aef8;
+  border: .1em solid black;
+  padding-left: .2em;
+  padding-right: .2em;
+}
+
+#ratings .album_details span {
+  color: white
+}
+  
+#ratings section.rating_album {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+
+
+#ratings label[for="rating"],label[for="review"] {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  
+  
+}
+#ratings .rating_album ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+
+#ratings form li {
+  padding-right: .5em;
+  padding-left: .5em;
+  flex-grow: 1; /*this will make my li fill out entire space of ul */ 
+}
+
+#ratings form ul {
+  border: .1em solid black;
+  border-radius: .2em;
+  filter: drop-shadow(0 0 0.5rem crimson);
+  text-align: center;
+  margin-top: 0;  
+}
+  
+
+/* Create lines/borders between radiofield choices on the right, but not the last one */
+#ratings form li:not(:last-of-type) {
+  border-right: .1em solid black;
+}
+
+#ratings form li:first-child {
+  background-color: red;
+}
+#ratings form li:nth-child(2) {
+  background-color: orange;
+}
+
+#ratings form li:nth-child(3) {
+  background-color: rgb(213, 209, 0);
+}
+
+#ratings form li:nth-child(4) {
+  background-color: lightgreen;
+}
+
+#ratings form li:nth-child(5) {
+  background-color: green;
+}
+
+#ratings input[type="radio"]:checked + label {
+  color: #fff; /* Set the text color when checked */
+}
+
+/* text bar */
+.rating_album #review {
+    font-size: 18px;
+    width: 100%;
+    min-height: 100px; /* Adjust the height as needed */
+    border: .3em solid #F2BC00;
+    filter: drop-shadow(0 0 0.5rem crimson);
+    
+}
+
+#ratings > a {
+  color: #000000;
+  background-color: #F2BC00;
+  border-radius: .2em;
+  padding: .3em;
+  
+  
+}
+
+#ratings {
+  text-align: center;
+}
+
+#ratings section {
+  text-align: left;
+}
+
+#ratings section.rating_album {
+  margin-bottom: 2em;
+}
+
+
+/* ------------------------------------------------------------reviews--------------------------- */
+#reviews h1 {
+  color: black;
+}
+
+#reviews {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+#reviews form {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#reviews label {
+  font-weight: bold;
+}
+
+#reviews select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#reviews input[type="submit"] {
+  padding: 6px 20px;
+  border: none;
+  background-color: #F2BC00;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+}
+
+#reviews input[type="submit"]:hover {
+  background-color: #1290ff;
+}
+
+#reviews section {
+  margin-top: 1.5em;
+}
+
+#reviews ul {
+  border-top: .1em solid #000000;
+  padding-top: 1em;
+  padding-left: 0;
+  width: 20em;
+  list-style: none;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #f2610046;
+  filter: drop-shadow(0 0 0.5rem crimson);
+}
+
+#reviews ul li {
+  margin-top: .5em;
+}
+
+#reviews ul li:nth-child(2) {
+  color: #000000;
+  font-size: 1.1em;
+}
+
+
+#reviews ul li:first-child b {
+  font-weight: lighter;
+  background-color: #00aef8;
+  border: .1em solid black;
+  padding-left: .2em;
+  padding-right: .2em;
+
+}
+
+#reviews ul a:hover {
+  font-size: 1.1em;
+  transition: 1s;
+}
+
+#reviews > a {
+  margin-top: 2em;
+  color: #000000;
+  font-size: 1.5em;
+  
+}
+
+#reviews > a:hover {
+  color: white;
+}
+/* -------------------------------------------Profiles----------------------------------------------- */
+#view_profile,#profile {
+  text-align: center;
+}
+#view_profile img.vinyl, 
+#profile img.vinyl {
+  border: 0;
+  width: 8em;
+}
+
+#view_profile section.viewed_profile,
+#profile section.viewed_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#view_profile p,
+#profile p {
+  margin-bottom: 0;
+}
+
+#view_profile h2,#profile h2 {
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#view_profile img,
+#profile img {
+  width: 10em;
+  border: .1em solid black;
+  filter: drop-shadow(0 0 0.5rem crimson);
+}
+
+#view_profile ul,
+#profile ul {
+  list-style: none;
+}
+#view_profile .viewed_profile h1,
+#profile .viewed_profile h1  {
+  font-size: 2em;
+
+}
+
+#view_profile .viewed_profile p, 
+#profile .viewed_profile p {
+  font-size: 1.2em;
+}
+
+#view_profile .viewed_profile i,
+#profile .viewed_profile i {
+  color: #000000;
+
+}
+
+#view_profile .viewed_profile a, 
+#profile .viewed_profile a {
+  color: #000000;
+}
+
+#view_profile  .viewed_profile a:hover,
+#profile  .viewed_profile a:hover {
+  color: #F2BC00;
+}
+
+#view_profile .viewed_profile ul,
+#profile .viewed_profile ul {
+  padding: 0;}
+
+#view_profile .opinions ul li,
+#profile .opinions ul li {
+  margin-bottom: .5em;
+}
+
+
+
+#view_profile .opinions,
+#profile .opinions {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 2em;
+  
+}
+
+#view_profile .opinions ul,
+#profile .opinions ul {
+ padding: 0;
+  
+}
+
+#view_profile .opinions li:nth-child(3),
+#profile .opinions li:nth-child(3) {
+  display: flex;
+  max-width: 10em;
+  flex-wrap: wrap;
+  font-size: .8em;
+  color: #000000;
+  font-weight: bold;
+
+}
+
+
+
+#view_profile .opinions ul li:nth-child(2) b ,
+#profile .opinions ul li:nth-child(2) b {
+  font-weight: lighter;
+  background-color: #00aef8;
+  border: .1em solid black;
+  padding-left: .2em;
+  padding-right: .2em;
+  
+
+}
+
+#view_profile  .opinions a:hover,
+#profile  .opinions a:hover {
+  font-size: 1.1rem;
+  transition: 1s;
+}
+
+#profile .opinions li:nth-child(2) a:last-child {
+  color: #000000;
+  font-size: .7em;
+}
+#profile .opinions li:nth-child(2) a:last-child:hover{
+  font-size: .7em;
+}
+
+
+#profile form {
+  margin-bottom: 1em;
+}
+
+
+#profile label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#profile input[type="text"] {
+  width: 20em;
+  
+  border: 1px solid #000000;
+  border-radius: 4px;
+  
+}
+
+/* -------------------------------------------Follower/Following----------------------------------------------- */
+#followers .followers_following {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 3em;
+}
+
+#followers img {
+  width: 8em;
+  filter: drop-shadow(0 0 0.5rem crimson);
+} 
+
+
+#followers h1 i {
+  color: #000000;
+}
+
+
+#followers ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+#followers {
+  text-align: center;
+}
+
+#followers .following {
+  border-left: .1em solid black;
+  text-align: center;
+}
+#followers h2 {
+  text-decoration: underline ;
+
+}
+
+#followers .following a,
+#followers .followers a {
+  color: black;
+  font-size: 1.2em;
+}
+
+#followers a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#followers > a {
+  color: #000000;
+  font-size: 1.5em;
+  
+}
+/* ---------------------------------------------------------------JS------------------------------------------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #000000;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------RESPONSIVENESS----------------------------------------------------------------- */
+ @media screen and (max-width:730px) {
+  
+  #index form {
+    width: 90%;
+  }
+
+  #index img{
+    width: 95%;
+  }
+
+  #results img{
+    width: 95%;
+  }
+
+  #login, #register {
+    width: 90%;
+  }
+
+ 
+
+  nav {
+   
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+  }
+
+  nav ul {
+    align-items: center;
+    background-color: #1290ff;
+    border-radius: 2em;
+    border: 1px solid black;
+  }
+
+  #ratings section.rating_album {
+   margin-top: 1.5em;
+    text-align: center;
+  }
+
+  #followers h1  {
+    margin-bottom: 2em;
+  }
+  #ratings form {
+    width: 90%;
+  }
+  #ratings li {
+    align-items: center;
+    
+    
+  }
+
+  #ratings i {
+    margin-right: 1em;
+  }
+ 
+}
+
+@media screen and (max-width:1000px) {
+  h1{
+    text-align: center;
+  }
+
+}
+  
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Heard CA1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='HeardLOGO2.ico') }}"/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <figure><img src="{{ url_for('static', filename='HeardLOGO.png') }}" alt="Logo" /></figure>
+            <ul> 
+        {% if g.user %}
+            <li><i>id: {{ g.user }}</i></li>
+            <li><a href="{{ url_for('profile') }}">PROFILE</a></li>	
+            <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
+        {% else %}
+            <li><a href="{{ url_for('register') }}">REGISTER</a></li> 
+            <li><a href="{{ url_for('login') }}">LOGIN</a></li> 
+        {% endif %}        
+        <li><a href="{{ url_for('index') }}">SEARCH</a></li>
+        <li>
+            <a href="#" id="infoButton">
+              <i class="fa-sharp fa-solid fa-circle-info"></i>
+            </a>
+          </li>
+
+          
+            </ul>
+        </nav>
+    </header>
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+          <span class="close">X</span>
+          <p>Welcome to Heard. <br> 
+            A website where you can rate and review albums. <br>
+            To use all features please create an account or use the test account. <br> 
+            # UserID: Test <br> 
+            # Password: 1234 <br>
+            The list of albums available on this demo site are as follows:</p>
+            <ul>
+                <li>('Thriller', 'Michael Jackson')</li>
+                <li>('Abbey Road', 'The Beatles')</li>
+                <li>('Kind of Blue', 'Miles Davis')</li>
+                <li>('Rumours', 'Fleetwood Mac')</li>
+                <li>('Franz Ferdinand', 'Franz Ferdinand')</li>
+                <li>('Hot Fuss', 'The Killers')</li>
+                <li>('American Idiot', 'Green Day')</li>
+                <li>('Demon Days', 'Gorillaz')</li>
+                <li>('Currents', 'Tame Impala')</li>
+                <li>('More Life', 'Drake')</li>
+                <li>('Dawn FM', 'The Weeknd')</li>
+                <li>('Gloria', 'Sam Smith')</li>
+            </ul>
+        </div>
+      </div>
+
+      <script src="{{ url_for('static', filename='nav.js') }}" type="module"></script>	  
+    
+    {% block main_content %}
+
+    {% endblock %}
+</body>
+
+</html>
