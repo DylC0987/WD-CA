@@ -49,4 +49,9 @@ Link: https://cs1.ucc.ie/~dmc8/cgi-bin/ca2/run.py/
 
 # WARNING: links to websites will cease to work at the start of the next academic year (Sep 2023)
 
+# Python Assignments
+Contains some simple python programs
+
+
+
 
